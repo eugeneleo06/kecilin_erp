@@ -1,73 +1,63 @@
-[![Build Stable](https://github.com/frappe/frappe_docker/actions/workflows/build_stable.yml/badge.svg)](https://github.com/frappe/frappe_docker/actions/workflows/build_stable.yml)
-[![Build Develop](https://github.com/frappe/frappe_docker/actions/workflows/build_develop.yml/badge.svg)](https://github.com/frappe/frappe_docker/actions/workflows/build_develop.yml)
+<div align="center">
+<a href="https://frappehealth.com">
+    <img src="https://raw.githubusercontent.com/frappe/healthcare/develop/healthcare/public/images/healthcare.svg" height="128" alt="Frappe Health Logo">
+  </a>
+  <h2>Frappe Health</h2>
+  <p align="center">
+    <p>Open source & easy-to-use hospital information system(HIS) for all healthcare organisations.</p>
+  </p>
 
-Everything about [Frappe](https://github.com/frappe/frappe) and [ERPNext](https://github.com/frappe/erpnext) in containers.
+  [Frappe Health](https://frappehealth.com)
 
-# Getting Started
+ <div align="center" style="max-height: 40px;">
+    <a href="https://frappecloud.com/healthcare/signup">
+        <img src=".github/try-on-f-cloud-button.svg" height="40">
+    </a>
+ </div>
 
-To get started you need [Docker](https://docs.docker.com/get-docker/), [docker-compose](https://docs.docker.com/compose/), and [git](https://docs.github.com/en/get-started/getting-started-with-git/set-up-git) setup on your machine. For Docker basics and best practices refer to Docker's [documentation](http://docs.docker.com).
+</div>
 
-Once completed, chose one of the following two sections for next steps.
+### Introduction
 
-### Try in Play With Docker
+Frappe Health enables the health domain in ERPNext and has various features that will help healthcare practitioners, clinics and hospitals to leverage the power of Frappe and ERPNext. It is built on Frappe, a full-stack, meta-data driven, web framework, and integrates seamlessly with ERPNext, the most agile ERP software. Frappe Health helps to manage healthcare workflows efficiently and most of the design is based on HL7 FHIR (Fast Health Interoperability Resources).
 
-To play in an already set up sandbox, in your browser, click the button below:
 
-<a href="https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/frappe/frappe_docker/main/pwd.yml">
-  <img src="https://raw.githubusercontent.com/play-with-docker/stacks/master/assets/images/button.png" alt="Try in PWD"/>
-</a>
+### Key Features
 
-### Try on your Dev environment
+![Key Features](https://raw.githubusercontent.com/frappe/health/develop/key-features.png)
 
-First clone the repo:
+Key feature sets include Patient management, Outpatient / Inpatient management, Clinical Procedures, Rehabilitation and Physiotherapy, Laboratory management etc. and supports configuring multiple Medical Code Standards. It allows mapping any healthcare facility as Service Units and specialities as Medical Departments.
+
+By integrating with ERPNext, features of ERPNext can also be utilized to manage Pharmacy and supplies, Purchases, Human Resources, Accounts and Finance, Asset Management, Quality etc. Along with authentication and role based access permissions, RESTfullness, extensibility, responsiveness and other goodies, the framework also allows setting up Website, payment integration and Patient portal.
+
+
+### Installation
+
+Using bench, [install ERPNext](https://github.com/frappe/bench#installation) as mentioned here.
+
+Once ERPNext is installed, add health app to your bench by running
 
 ```sh
-git clone https://github.com/frappe/frappe_docker
-cd frappe_docker
+$ bench get-app healthcare
 ```
 
-Then run: `docker compose -f pwd.yml up -d`
+After that, you can install health app on required site by running
 
-## Final steps
+```sh
+$ bench --site demo.com install-app healthcare
+```
 
-Wait for 5 minutes for ERPNext site to be created or check `create-site` container logs before opening browser on port 8080. (username: `Administrator`, password: `admin`)
 
-If you ran in a Dev Docker environment, to view container logs: `docker compose -f pwd.yml -d`. Don't worry about some of the initial error messages, some services take a while to become ready, and then they go away.
+### Documentation
 
-# Documentation
+Complete documentation for Frappe Health is available at https://frappehealth.com/docs
 
-### [Production](#production)
 
-- [List of containers](docs/list-of-containers.md)
-- [Single Compose Setup](docs/single-compose-setup.md)
-- [Environment Variables](docs/environment-variables.md)
-- [Single Server Example](docs/single-server-example.md)
-- [Setup Options](docs/setup-options.md)
-- [Site Operations](docs/site-operations.md)
-- [Backup and Push Cron Job](docs/backup-and-push-cronjob.md)
-- [Port Based Multi Tenancy](docs/port-based-multi-tenancy.md)
-- [Migrate from multi-image setup](docs/migrate-from-multi-image-setup.md)
-- [running on linux/mac](docs/setup_for_linux_mac.md)
+### License
 
-### [Custom Images](#custom-images)
+GNU GPL V3. See [license.txt](https://github.com/frappe/health/blob/develop/license.txt) for more information.
 
-- [Custom Apps](docs/custom-apps.md)
-- [Build Version 10 Images](docs/build-version-10-images.md)
 
-### [Development](#development)
+### Credits
 
-- [Development using containers](docs/development.md)
-- [Bench Console and VSCode Debugger](docs/bench-console-and-vscode-debugger.md)
-- [Connect to localhost services](docs/connect-to-localhost-services-from-containers-for-local-app-development.md)
-
-### [Troubleshoot](docs/troubleshoot.md)
-
-# Contributing
-
-If you want to contribute to this repo refer to [CONTRIBUTING.md](CONTRIBUTING.md)
-
-This repository is only for container related stuff. You also might want to contribute to:
-
-- [Frappe framework](https://github.com/frappe/frappe#contributing),
-- [ERPNext](https://github.com/frappe/erpnext#contributing),
-- [Frappe Bench](https://github.com/frappe/bench).
+Frappe Health module is initially developed by Earthians. Currently, it is developed & maintained by Frappe Team and community contributors.
