@@ -1,0 +1,6 @@
+{
+    "js/dicomviewer.js": [
+        "public/js/dicomviewer.js"
+    ],
+    "css/dicomviewer.css": []
+}
