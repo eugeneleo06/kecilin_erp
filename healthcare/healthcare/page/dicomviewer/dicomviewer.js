@@ -6,7 +6,14 @@ frappe.pages['dicomviewer'].on_page_load = function(wrapper) {
         title: 'DICOM Viewer',
         single_column: true
     });
-
+    $(page.body).html(`
+        <div>
+            <h1>DICOM Viewer</h1>
+            <div id="dicom-container">
+                Test
+            </div>
+        </div>
+    `);
     // Initialize your DICOM viewer here
     console.log('DICOM Viewer initialized');
 };
